@@ -4,7 +4,7 @@
 <html lang="en-us">
 <!--<![endif]-->
   <head>
-    <title>Red Hat DoD Latest | Welcome | Getting Started</title>
+    <title>Red Hat Gov Latest | Welcome | Getting Started</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,9 +24,10 @@
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../../latest/_images/apple-touch-icon-precomposed-57.png">
     <!-- Patternfly CSS -->
     <link href="../../latest/_stylesheets/asciibinder.css" rel="stylesheet" />
+    <link href="../../latest/_stylesheets/docs.css" rel="stylesheet" />
     <link href="../../latest/_stylesheets/patternfly.min.css" rel="stylesheet" />
     <link href="../../latest/_stylesheets/patternfly-additions.min.css" rel="stylesheet" />
-    <link href="../../latest/_stylesheets/docs.css" rel="stylesheet" />
+
     <!-- Patternfly JS -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -60,7 +61,7 @@
           <a href="latest/welcome">Latest Docs</a>
         </li>
         <li>
-          <a href="https://github.com/redhatdod" target="_blank">Red Hat DoD Github</a>
+          <a href="https://github.com/RedHatGov" target="_blank">Red Hat Gov Github</a>
         </li>
           <li>
             <a href="https://access.redhat.com/support/" target="_blank">Help</a>
@@ -79,7 +80,7 @@
     </p>
     <ol class="breadcrumb">
       <li class="hidden-xs active">
-        <a href="../welcome/index.html">Red Hat DoD Latest</a>
+        <a href="../welcome/index.html">Red Hat Gov Latest</a>
       </li>
       <li class="hidden-xs active">
         <a href="../welcome/index.html">Welcome</a>
@@ -99,15 +100,7 @@
       <ul id="topicGroup0" class="collapse in list-unstyled">
             <li><a class=" active" href="../welcome/index.html">Getting Started</a></li>
             <li><a class="" href="../welcome/tools.html">Tools</a></li>
-      </ul>
-    </li>
-    <li class="nav-header">
-      <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
-        <span id="tgSpan1" class="fa fa-angle-right"></span>Red Hat Satellite
-      </a>
-      <ul id="topicGroup1" class="collapse  list-unstyled">
-            <li><a class="" href="../satellite/index.html">Overview</a></li>
-            <li><a class="" href="../satellite/quickstart.html">Quick Start</a></li>
+            <li><a class="" href="../welcome/faq.html">Frequently Asked Questions</a></li>
       </ul>
     </li>
 </ul>
@@ -121,14 +114,7 @@
 <div id="toc" class="toc">
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
-<li><a href="#overview">Overview</a>
-<ul class="sectlevel2">
-<li><a href="#setup">Setup</a></li>
-<li><a href="#deploydocs">Deploying Docs to the site</a></li>
-<li><a href="#devserver">Running the Dev Server</a></li>
-<li><a href="#devdocs">Using Devdocs for local development</a></li>
-</ul>
-</li>
+<li><a href="#overview">Overview</a></li>
 </ul>
 </div>
 </div>
@@ -140,7 +126,7 @@
 <p>This repo includes a couple tools to help easy the process of getting your enviroment setup and running. The tools are a work in progress.</p>
 </div>
 <div class="paragraph">
-<p>If you have developed something better, we do accept pull requests :)</p>
+<p>There will be improvements to come in the tooling to make working with this repo easier. If you are interested in contributing to the tools used to build and deploy the documentation, we do accept pull requests! :)</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -155,119 +141,6 @@
 </td>
 </tr>
 </table>
-</div>
-<div class="sect2">
-<h3 id="setup"><a class="anchor" href="#setup"></a>Setup</h3>
-<div class="paragraph">
-<p>The easiest way to get started is with a linux machine (Mac support coming) and docker. You can run the following to get up an running quickly. This script will deploy and setup a docker container for development with this project.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">curl -O https://raw.githubusercontent.com/redhatdod/documentation/master/setupdocker.sh
-chmod +x setupdocker.sh
-./setupdocker.sh</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deploydocs"><a class="anchor" href="#deploydocs"></a>Deploying Docs to the site</h3>
-<div class="paragraph">
-<p>The deploydocs script will automate the process of pushing everything to the production site. You need to first setup the deploydocs script for your enviroment.
-Copy the deploydocs script to a bin folder of your choosing, and then edit.
-At the top of the script there is variable that is exported.
-You can run the following in documents folder</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">sudo cp deploydocs /usr/bin
-vi /usr/bin/deploydocs
-export WORKINGDIR=~/therootfolderformyprojects</pre>
-</div>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>DO NOT EDIT THE SCRIPT IN THE REPO FOLDER!</p>
-</div>
-<div class="paragraph">
-<p>Please copy the file to a bin, and edit it there</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you are using the docker container, everything is setup for you</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="devserver"><a class="anchor" href="#devserver"></a>Running the Dev Server</h3>
-<div class="paragraph">
-<p>The repo includes a script to start a dev server for local development of docs. The dev server uses a nodejs package called http-server. This is a very simple, but powerful enough server for document development. The script is called devserver, and if you are not using the docker container then it will require setup.</p>
-</div>
-<div class="paragraph">
-<p>When you first setup your container, the devserver is already running. If stop the container or reboot your machine, you will need to start the devserver from the command line. From your host machine run</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">sudo docker exec -it $(sudo docker ps |grep docs |awk '{print $1}') /usr/bin/devserver <i class="conum" data-value="1"></i><b>(1)</b></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>This starts the development server from your host machine</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Now visit <a href="http://127.0.0.1:8080" class="bare">http://127.0.0.1:8080</a> and you can view your changes using devdocs</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="devdocs"><a class="anchor" href="#devdocs"></a>Using Devdocs for local development</h3>
-<div class="paragraph">
-<p>The repo also includes a script for local development. You can use this script while you are developing a document to place into production. When combined with the devserver, you have the tools you need to get started. This script does everything that deploydocs does, except deploy the documents to production.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">/usr/bin/devdocs</pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="destroydocker"><a class="anchor" href="#destroydocker"></a>Destroying the docker container</h4>
-<div class="paragraph">
-<p>There is one final script pre-bundled called destroydocker.sh</p>
-</div>
-<div class="paragraph">
-<p>This script will destroy the docker container created by the inital setup.</p>
-</div>
-<div class="paragraph">
-<p>From the documents repo directory, run</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">./destroydocker.sh</pre>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -297,10 +170,5 @@ export WORKINGDIR=~/therootfolderformyprojects</pre>
  });
  /*]]>*/
 </script>
-  <footer class="footer">
-    <br/>
-    <br/>
-    <br/>
-</footer>
 </body>
 </html>
