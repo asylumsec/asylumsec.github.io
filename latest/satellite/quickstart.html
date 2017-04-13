@@ -4,7 +4,7 @@
 <html lang="en-us">
 <!--<![endif]-->
   <head>
-    <title>Red Hat DoD Latest | Welcome | Getting Started</title>
+    <title>Red Hat DoD Latest | Red Hat Satellite | Quick Start</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,11 +82,11 @@
         <a href="../welcome/index.html">Red Hat DoD Latest</a>
       </li>
       <li class="hidden-xs active">
-        <a href="../welcome/index.html">Welcome</a>
+        <a href="../satellite/index.html">Red Hat Satellite</a>
       </li>
       
       <li class="hidden-xs active">
-        Getting Started
+        Quick Start
       </li>
     </ol>
     <div class="row row-offcanvas row-offcanvas-left">
@@ -94,95 +94,41 @@
         <ul class="nav nav-sidebar">
     <li class="nav-header">
       <a class="" href="#" data-toggle="collapse" data-target="#topicGroup0">
-        <span id="tgSpan0" class="fa fa-angle-down"></span>Welcome
+        <span id="tgSpan0" class="fa fa-angle-right"></span>Welcome
       </a>
-      <ul id="topicGroup0" class="collapse in list-unstyled">
-            <li><a class=" active" href="../welcome/index.html">Getting Started</a></li>
+      <ul id="topicGroup0" class="collapse  list-unstyled">
+            <li><a class="" href="../welcome/index.html">Getting Started</a></li>
             <li><a class="" href="../welcome/tools.html">Tools</a></li>
       </ul>
     </li>
     <li class="nav-header">
       <a class="" href="#" data-toggle="collapse" data-target="#topicGroup1">
-        <span id="tgSpan1" class="fa fa-angle-right"></span>Red Hat Satellite
+        <span id="tgSpan1" class="fa fa-angle-down"></span>Red Hat Satellite
       </a>
-      <ul id="topicGroup1" class="collapse  list-unstyled">
+      <ul id="topicGroup1" class="collapse in list-unstyled">
             <li><a class="" href="../satellite/index.html">Overview</a></li>
-            <li><a class="" href="../satellite/quickstart.html">Quick Start</a></li>
+            <li><a class=" active" href="../satellite/quickstart.html">Quick Start</a></li>
       </ul>
     </li>
 </ul>
       </div>
       <div class="col-xs-12 col-sm-9 col-md-9 main">
         <div class="page-header">
-          <h2>How to get started writing docs for this project</h2>
+          <h2>Red Hat Satellite</h2>
         </div>
         <div id="preamble">
 <div class="sectionbody">
 <div id="toc" class="toc">
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
-<li><a href="#overview">Overview</a>
-<ul class="sectlevel2">
-<li><a href="#setup">Setup</a></li>
-<li><a href="#deploydocs">Deploying Docs to the site</a></li>
-<li><a href="#devserver">Running the Dev Server</a></li>
-<li><a href="#devdocs">Using Devdocs for local development</a></li>
+<li><a href="#quick-start">Quick Start</a>
+<ul class="sectlevel3">
+<li><a href="#export-the-variables">Export the Variables</a></li>
+<li><a href="#setup-the-subscriptions">Setup the Subscriptions</a></li>
+<li><a href="#copy-and-paste-deploy">Copy and Paste deploy</a></li>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="overview"><a class="anchor" href="#overview"></a>Overview</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This repo includes a couple tools to help easy the process of getting your enviroment setup and running. The tools are a work in progress.</p>
-</div>
-<div class="paragraph">
-<p>If you have developed something better, we do accept pull requests :)</p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This documentation is aimed at demo enviroments used by Red Hat engineers</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="setup"><a class="anchor" href="#setup"></a>Setup</h3>
-<div class="paragraph">
-<p>The easiest way to get started is with a linux machine (Mac support coming) and docker. You can run the following to get up an running quickly. This script will deploy and setup a docker container for development with this project.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">curl -O https://raw.githubusercontent.com/redhatdod/documentation/master/setupdocker.sh
-chmod +x setupdocker.sh
-./setupdocker.sh</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deploydocs"><a class="anchor" href="#deploydocs"></a>Deploying Docs to the site</h3>
-<div class="paragraph">
-<p>The deploydocs script will automate the process of pushing everything to the production site. You need to first setup the deploydocs script for your enviroment.
-Copy the deploydocs script to a bin folder of your choosing, and then edit.
-At the top of the script there is variable that is exported.
-You can run the following in documents folder</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">sudo cp deploydocs /usr/bin
-vi /usr/bin/deploydocs
-export WORKINGDIR=~/therootfolderformyprojects</pre>
-</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -192,15 +138,17 @@ export WORKINGDIR=~/therootfolderformyprojects</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>DO NOT EDIT THE SCRIPT IN THE REPO FOLDER!</p>
-</div>
-<div class="paragraph">
-<p>Please copy the file to a bin, and edit it there</p>
+<p><strong>This document is still a work in progress! When this label is removed, you can consider this fully functional.</strong></p>
 </div>
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start"><a class="anchor" href="#quick-start"></a>Quick Start</h2>
+<div class="sectionbody">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -209,63 +157,144 @@ export WORKINGDIR=~/therootfolderformyprojects</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are using the docker container, everything is setup for you</p>
+<p>This is designed to provide a copy and paste quick start for <strong>demo</strong> enviorments. This is not intended for <strong>production</strong> enviroments.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-</div>
-<div class="sect2">
-<h3 id="devserver"><a class="anchor" href="#devserver"></a>Running the Dev Server</h3>
+<div class="sect3">
+<h4 id="export-the-variables"><a class="anchor" href="#export-the-variables"></a>Export the Variables</h4>
 <div class="paragraph">
-<p>The repo includes a script to start a dev server for local development of docs. The dev server uses a nodejs package called http-server. This is a very simple, but powerful enough server for document development. The script is called devserver, and if you are not using the docker container then it will require setup.</p>
+<p>First we start by setting a couple environment variables. These will serve the rest of the copy and paste operation.</p>
 </div>
 <div class="paragraph">
-<p>When you first setup your container, the devserver is already running. If stop the container or reboot your machine, you will need to start the devserver from the command line. From your host machine run</p>
+<p><strong>You only need to set the first 4 variables, the rest is automated via bash for you</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">sudo docker exec -it $(sudo docker ps |grep docs |awk '{print $1}') /usr/bin/devserver <i class="conum" data-value="1"></i><b>(1)</b></pre>
+<pre class="nowrap">export HOST=satellite.redhatdod.local <i class="conum" data-value="1"></i><b>(1)</b>
+export ADMINUSER=administrator <i class="conum" data-value="2"></i><b>(2)</b>
+export ADMINPASS=supersecretpassword <i class="conum" data-value="3"></i><b>(3)</b>
+export IFACE=eth0 <i class="conum" data-value="4"></i><b>(4)</b>
+export SUBNET=$(ip -f inet address show $IFACE |grep inet|awk '{print $2}' |awk -F. '{print $1"." $2"."$3}') <i class="conum" data-value="5"></i><b>(5)</b>
+export REVSUB=$(echo $SUBNET |awk -F. '{print $3"." $2"."$1}') <i class="conum" data-value="6"></i><b>(6)</b>
+export IPADDR=$(ip -f inet address show $IFACE |grep inet|awk '{print $2}' |cut -f1 -d '/') <i class="conum" data-value="7"></i><b>(7)</b></pre>
 </div>
 </div>
 <div class="colist arabic">
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>This starts the development server from your host machine</td>
+<td>Change this variable to the hostname you are going to use for your satellite</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>This is the admin user you will create, feel free to change the name to suit your liking</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Please change this value to a password that is actually secure</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><strong>This is the interface you are using for Satellite</strong> This value is what the next three variables are based from!</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>This is the subnet you will run DHCP and DNS on for satellite</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>This take the subnet you entered and provides the reverse for DNS</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>This gets your ip address based on the interface you gave in step 5</td>
 </tr>
 </table>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>Now visit <a href="http://127.0.0.1:8080" class="bare">http://127.0.0.1:8080</a> and you can view your changes using devdocs</p>
+<p><strong>If you are not comfortable setting a password on the command line, you can not export the ADMINPASS variable.</strong></p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="devdocs"><a class="anchor" href="#devdocs"></a>Using Devdocs for local development</h3>
 <div class="paragraph">
-<p>The repo also includes a script for local development. You can use this script while you are developing a document to place into production. When combined with the devserver, you have the tools you need to get started. This script does everything that deploydocs does, except deploy the documents to production.</p>
+<p><strong>Satellite will generate one for you if one is not created</strong></p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="nowrap">/usr/bin/devdocs</pre>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="destroydocker"><a class="anchor" href="#destroydocker"></a>Destroying the docker container</h4>
+<h4 id="setup-the-subscriptions"><a class="anchor" href="#setup-the-subscriptions"></a>Setup the Subscriptions</h4>
 <div class="paragraph">
-<p>There is one final script pre-bundled called destroydocker.sh</p>
+<p>Next we are going to setup your subscriptions with subscription-manager.</p>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>This script will destroy the docker container created by the inital setup.</p>
+<p><strong>NOTE to maintainer</strong> This section needs to be updated with a more automated/copy&amp;paste way to do this</p>
 </div>
-<div class="paragraph">
-<p>From the documents repo directory, run</p>
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">./destroydocker.sh</pre>
+<pre class="nowrap">subscription-manager register
+subscription-manager list --available --matches 'Red Hat Satellite'</pre>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="copy-and-paste-deploy"><a class="anchor" href="#copy-and-paste-deploy"></a>Copy and Paste deploy</h4>
+<div class="paragraph">
+<p>Now you can copy and paste from below, and you will have a complete satellite install upon completion.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">echo "$IPADDR $HOST" &gt;&gt; /etc/hosts
+hostnamectl set-hostname $HOST
+firewall-cmd --add-service=RH-Satellite-6
+firewall-cmd --permanent --add-service=RH-Satellite-6
+subscription-manager repos --disable "*"
+subscription-manager repos --enable=rhel-7-server-rpms \
+--enable=rhel-server-rhscl-7-rpms \
+--enable=rhel-7-server-satellite-6.2-rpms
+yum clean all
+yum -y update
+yum -y install satellite chrony sos
+systemctl start chronyd
+systemctl enable chronyd
+satellite-installer --scenario satellite \
+--foreman-initial-organization "Red Hat DoD" \
+--foreman-initial-location "Local Systems" \
+--foreman-admin-username $ADMINUSER \
+--foreman-admin-password $ADMINPASS \
+--foreman-proxy-dns true \
+--foreman-proxy-dns-interface $IFACE \
+--foreman-proxy-dns-zone $(hostname -d) \
+--foreman-proxy-dns-forwarders $SUBNET.1 \
+--foreman-proxy-dns-reverse $REVSUB.in-addr.arpa \
+--foreman-proxy-dhcp true \
+--foreman-proxy-dhcp-interface $IFACE \
+--foreman-proxy-dhcp-range "$SUBNET.100 $SUBNET.150" \
+--foreman-proxy-dhcp-gateway $SUBNET.1 \
+--foreman-proxy-dhcp-nameservers $SUBNET.2 \
+--foreman-proxy-tftp true \
+--foreman-proxy-tftp-servername $IPADDR</pre>
 </div>
 </div>
 </div>
