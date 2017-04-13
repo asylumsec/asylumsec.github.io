@@ -1,0 +1,44 @@
+[[keystone-deployment-modifications]]
+= Triple-O Keystone
+{product-author}
+{product-version}
+:data-uri:
+:icons:
+:experimental:
+:toc: macro
+:toc-title:
+:prewrap!:
+
+
+toc::[]
+
+== Overview
+Triple-O comes with a way to maniplate just about any parameter in an Openstack Deployment. This is done by passing enviroment templates into the deployment. Below are a few exmaples of deployment modifications I have made to suit my enviroment. 
+
+
+[[modifications-domains]]
+=== Adding Domain support to Keystone
+The default keystone options can be modified to support domains. Below is the example I used to enable domain support. You can copy this template into your deployment if you require domain support.  
+
+====
+
+----
+parameter_defaults:
+  ControllerExtraConfig: 
+    horizon:keystone_multidomain_support: True // <1>
+    keystone::using_domain_config: true // <2>
+    keystone::config::keystone_config:  
+      identity/domain_configurations_from_database: // <3>
+        value: false
+      identity/default_domain_id: // <4>
+        value: default
+      identity/driver: // <5>
+        value: sql
+----
+<1> This enables domain support on the horizon dashboard
+<2> This parameter is to enable domain support in keystone
+<3> I do not store the domain configuration in the database, so I set this to false
+<4> This option allows you to modify what the default domain is, if one is not specified
+<5> Because I am using the ldap driver for my domain, I set this parameter to sql so the serivce accounts for Openstack remain in the database
+====
+

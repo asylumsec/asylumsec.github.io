@@ -1,0 +1,8 @@
+= {product-title} {product-version} Documentation
+{product-author}
+{product-version}
+:data-uri:
+:icons:
+
+Welcome to my FreeIPA Docs page. 
+
